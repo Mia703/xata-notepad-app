@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://bookworm7572-s-workspace-e0s0n4.us-west-2.xata.sh/db/notepad-database",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}
