@@ -1,0 +1,26 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_cscroi3oca8f6r1jfv40",
+    "operations": [
+      {
+        "add_column": {
+          "table": "Notes",
+          "column": {
+            "pk": false,
+            "name": "content",
+            "type": "text",
+            "unique": false,
+            "comment": "",
+            "nullable": true
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_cscroi3oca8f6r1jfv40",
+  "parent": "mig_cscrnuo1g02auucio7tg",
+  "schema": "public",
+  "startedAt": "2024-10-24T03:17:30.067151Z"
+}

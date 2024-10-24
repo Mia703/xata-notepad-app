@@ -1,0 +1,19 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_cscrqmjoca8f6r1jfv70",
+    "operations": [
+      {
+        "drop_column": {
+          "table": "Notes",
+          "column": "created_time"
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_cscrqmjoca8f6r1jfv70",
+  "parent": "mig_cscrpbboca8f6r1jfv60",
+  "schema": "public",
+  "startedAt": "2024-10-24T03:22:02.824848Z"
+}
