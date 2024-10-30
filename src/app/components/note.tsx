@@ -1,30 +1,39 @@
 import { Card, CardContent, Typography } from "@mui/material";
 
 interface NotesProps {
-  title: String;
-  content: String;
+  title: string;
+  content: string;
   date: Date;
-  tags: String[];
+  tags: string;
 }
-const Note: React.FC<NotesProps> = ({title, content, date, tags }) => {
+
+function separateTags(tagsList: string) {
+  tagsList = tagsList.replaceAll(" ", "#");
+  tagsList = tagsList.replaceAll(",", " ");
+  return "#".concat(tagsList);
+}
+const Note: React.FC<NotesProps> = ({ title, content, date, tags }) => {
   return (
-    <Card className="col-span-1">
+    <Card className="my-4 hover:cursor-pointer">
       <CardContent>
-        <Typography variant="h1" className="my-2">
+        <Typography variant="h1" className="my-2" sx={{ fontSize: "0.9em" }}>
           {title}
         </Typography>
-        <Typography variant="body1" className="text-[--medium-grey]">
+        <Typography
+          variant="body1"
+          className="line-clamp-3 text-[--medium-grey]"
+          sx={{ fontSize: "0.8em" }}
+        >
           {content}
         </Typography>
         <div className="sub-data-container mt-4 flex flex-row justify-between text-[--medium-grey]">
-          <Typography className="hashtag">
-            {tags
-              ? tags.map((tagItem) => {
-                  return <span className="text-xs">#{tagItem} </span>;
-                })
-              : ""}
+          <Typography className="hashtag" sx={{ fontSize: "0.8em" }}>
+            {separateTags(tags)}
           </Typography>
-          <Typography className="text-xs">{`${date.getMonth() < 10 ? `0${date.getMonth()}` : `${date.getMonth()}`}/${date.getDate() < 10 ? `0${date.getDate()}` : `${date.getDate()}`}/${date.getFullYear()}`}</Typography>
+          <Typography
+            className="date"
+            sx={{ fontSize: "0.8em" }}
+          >{`${date.getMonth() < 10 ? `0${date.getMonth()}` : `${date.getMonth()}`}/${date.getDate() < 10 ? `0${date.getDate()}` : `${date.getDate()}`}/${date.getFullYear()}`}</Typography>
         </div>
       </CardContent>
     </Card>

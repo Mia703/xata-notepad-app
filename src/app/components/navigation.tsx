@@ -3,7 +3,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import SettingsIcon from "@mui/icons-material/Settings";
-import { Button, IconButton } from "@mui/material";
+import { Button, Container, IconButton } from "@mui/material";
 
 interface NavigationProps {
   current: String;
@@ -11,43 +11,27 @@ interface NavigationProps {
 
 const Navigation: React.FC<NavigationProps> = ({ current }) => {
   return (
-    <nav id="main-navigation" className="bg-red-500 p-6">
-      {current == "home" ? (
-        <Button variant="contained" startIcon={<HomeIcon />}>
-          Home
-        </Button>
-      ) : (
+    <nav id="main-navigation" className="absolute bottom-0 left-0 flex w-full">
+      <Container
+        component={"div"}
+        className="m-6 flex flex-row justify-center rounded-lg bg-[--medium-grey] p-3"
+      >
         <IconButton>
-          <HomeIcon />
+          <HomeIcon sx={{ color: "#121212", margin: '0 5px' }} />
         </IconButton>
-      )}
-      {current == "search" ? (
-        <Button variant="contained" startIcon={<SearchIcon />}>
-          Search
-        </Button>
-      ) : (
+
         <IconButton>
-          <SearchIcon />
+          <SearchIcon sx={{ color: "#121212", margin: '0 5px' }} />
         </IconButton>
-      )}
-      {current == "note" ? (
-        <Button variant="contained" startIcon={<AddCircleOutlineIcon />}>
-          New note
-        </Button>
-      ) : (
+
         <IconButton>
-          <AddCircleOutlineIcon />
+          <AddCircleOutlineIcon sx={{ color: "#121212", margin: '0 5px' }} />
         </IconButton>
-      )}
-      {current == "settings" ? (
-        <Button variant="contained" startIcon={<SettingsIcon />}>
-          Settings
-        </Button>
-      ) : (
+
         <IconButton>
-          <SettingsIcon />
+          <SettingsIcon sx={{ color: "#121212", margin: '0 5px' }} />
         </IconButton>
-      )}
+      </Container>
     </nav>
   );
 };

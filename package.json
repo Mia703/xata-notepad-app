@@ -14,13 +14,14 @@
     "@fontsource-variable/inter": "^5.1.0",
     "@mui/icons-material": "^6.1.5",
     "@mui/material": "^6.1.5",
+    "@types/webpack": "^5.28.5",
     "@xata.io/client": "^0.0.0-next.va121e4207b94bfe0a3c025fc00b247b923880930",
     "next": "15.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^20.17.3",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "postcss": "^8",
